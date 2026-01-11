@@ -8,6 +8,7 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from '../ui/drawer'
+import { Geolocation } from '@capacitor/geolocation';
 
 export default function GeolocationPermissionDrawer() {
   const showGeolocationPermissionsDrawer = usePermissionsStore(
@@ -41,7 +42,10 @@ export default function GeolocationPermissionDrawer() {
             </DrawerClose>
             <Button
               className="flex-1"
-              onClick={() => setGeolocationPermissionGranted(true)}
+              onClick={() => {
+                Geolocation.requestPermissions();
+                setGeolocationPermissionGranted(true);
+              }}
             >
               Akzeptieren
             </Button>
