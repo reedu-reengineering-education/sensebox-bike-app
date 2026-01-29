@@ -21,7 +21,8 @@ export default async function getAggregatedData(trackId: string) {
         return 'AVG'
       case 'distance':
         return 'MIN'
-      case 'overtaking':
+      case 'overtaking_car':
+      case 'overtaking_bike':
       case 'surface_anomaly':
         return 'MAX'
       default:
